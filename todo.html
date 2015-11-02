@@ -1,0 +1,76 @@
+<head>
+  <title>Procrastination Terminator</title>
+</head>
+
+<body>
+  <h1>Welcome to the Procrastination Terminator!</h1>
+
+  <div class="container">
+    <div class="login">
+      {{> loginButtons}}
+    </div>
+
+    {{> TodosPanel}}
+  </div>
+
+  <div class="footer">
+    {{> footer}}
+  </div>
+</body>
+
+<template name="TodosPanel">
+  <div class="todos-panel">
+    {{> CreateTodoItem}}
+    <ul class='todos-list'>
+      {{#each items}}
+      <li class="todo-item {{isDoneClass}}">
+        {{> TodoItem}}
+      </li>
+      {{else}}
+      <li class="todo-item empty">
+        No procrastination to kill now!
+      </li>
+      {{/each}}
+    </ul>
+    {{> TodosCount}}
+  </div>
+</template>
+
+
+<template name="TodoItem">
+  <div class="done">
+    <input type="checkbox" name="is_done" {{isDoneChecked}} />
+  </div>
+
+  <div class="subject">
+    {{subject}}
+  </div>
+
+  <div class="delete-button">
+    <button class="delete">X</button>
+  </div>
+</template>
+
+<template name="CreateTodoItem">
+  <form class="create-todo">
+    {{#if currentUser}}
+      <input type="text" placeholder="What do you no longer want to procrastinate?">
+    {{else}}
+      <input type="text" readonly placeholder="Sign in to kill some procrastination!">
+    {{/if}}
+  </form>
+</template>
+
+
+<template name="TodosCount">
+  <div class="todos-count">
+    {{completedCount}} / {{totalCount}} procrastinations killed.
+    {{#if isBadass}}
+    <p id="badass-message">You're such a badass.</p>
+    {{/if}}
+  </div>
+</template>
+
+<template name="footer">
+  <p>made with &#60;3 by Nina Belikova 2015</p>
+</template>

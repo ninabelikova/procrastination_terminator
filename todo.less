@@ -1,0 +1,91 @@
+body {
+  font-size: 14pt;
+  color: #777;
+  font-family: Avenir, sans-serif;
+  margin: 30px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  margin: auto;
+  width: 50%;
+}
+
+.login {
+  margin: 20px 0px;
+}
+
+.todos-panel {
+}
+
+.create-todo input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18pt;
+  height: 24pt;
+  line-height: 24pt;
+}
+
+.todos-count {
+  clear: both;
+  overflow: hidden;
+  margin: 20px 0px;
+  color: lighten(#777, 20%);
+}
+
+.todos-list {
+  list-style: none;
+  clear: both;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-item {
+  clear: both;
+  float: left;
+  padding: 10px 0px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+
+  &.done {
+    .subject {
+      text-decoration: line-through;
+      font-style: italic;
+    }
+  }
+
+  .done {
+    float: left;
+  }
+
+  .subject {
+    float: left;
+    padding-left: 20px;
+  }
+}
+
+
+#badass-message {
+  margin-top: 10px;
+}
+
+.delete-button {
+  float: right;
+}
+
+.delete {
+  border: none;
+  background: none;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+}
